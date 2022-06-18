@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vbox" layoutX="10.0" layoutY="10.0" prefHeight="250.0"
+      prefWidth="300.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/2.2">
+
+    <fx:script>
+        var System = Java.type("java.lang.System")
+        function buttonAction(event){
+        outputTextInvitation.setText("Serdecznie zapraszam " + inputName.getText() +
+                                    " na moje " + inputYear.getText() + " urodziny, które odbędą się " +
+                                    inputDate.getText() + " o godzinie " + inputHour.getText() + ".");
+        }
+    </fx:script>
+    <children>
+
+        <Label fx:id="nameLabel" alignment="CENTER_LEFT" cache="true"
+               cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0"
+               text="Please insert name:" textAlignment="LEFT" />
+        <TextField fx:id="inputName" prefWidth="100.0" />
+
+        <Label fx:id="yearLabel" alignment="CENTER_LEFT" cache="true"
+               cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0"
+               text="Please insert year of birth:" textAlignment="LEFT" />
+        <TextField fx:id="inputYear" prefWidth="100.0" />
+
+        <Label fx:id="dateLabel" alignment="CENTER_LEFT" cache="true"
+               cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0"
+               text="Please insert date:" textAlignment="LEFT" />
+        <TextField fx:id="inputDate" prefWidth="100.0" />
+
+        <Label fx:id="hourLabel" alignment="CENTER_LEFT" cache="true"
+               cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0"
+               text="Please insert hour:" textAlignment="LEFT" />
+        <TextField fx:id="inputHour" prefWidth="100.0" />
+
+        <Button fx:id="passPramsButton" alignment="CENTER_RIGHT"
+                contentDisplay="CENTER" mnemonicParsing="false"
+                onAction="buttonAction(event);" text="OK" textAlignment="CENTER" />
+
+        <Label fx:id="outputInvitationLabel" alignment="CENTER_LEFT" cache="true"
+               cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0"
+               text="Your invitation:" textAlignment="LEFT" />
+
+        <TextArea fx:id="outputTextInvitation" prefHeight="100.0"
+                  prefWidth="200.0" wrapText="true" />
+    </children>
+</VBox>
